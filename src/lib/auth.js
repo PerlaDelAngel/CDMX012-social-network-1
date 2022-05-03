@@ -3,7 +3,7 @@
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,
   FacebookAuthProvider, GithubAuthProvider, getAdditionalUserInfo, signInWithEmailAndPassword,
-  signOut,
+  signOut, onAuthStateChanged,
 } from '../firebase-imports.js';
 import { app } from './firebase-config.js';
 import { onNavigate } from '../app.js';
@@ -113,21 +113,17 @@ export const signOutBR = async () => {
 };
 
 // Revisar
-/* const auth = getAuth(app); // Init firebase app
+const auth = getAuth(app); // Init firebase app
 
 // Current user id
-let currentUserUid = '';
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
     const displayName = user.displayName;
     const email = user.email;
-
-    currentUserUid = uid;
     console.log(`${displayName} - ${email} - ${uid}`);
-  } else {
-    // User is signed out
+  } else { // User is signed out
     console.log('User signed out');
     onNavigate('/');
   }
-}); */
+});

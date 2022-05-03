@@ -27,21 +27,6 @@ export async function saveInfo(userForm) {
   } else {
     console.log('no user is signed in');
   }
-  // onAuthStateChanged(auth, (result) => {
-  //   const uid = result.uid;
-  //   setDoc(doc(db, 'usernames', userForm.username.value), {
-  //     uid: result.uid,
-  //   });
-  //   setDoc(doc(db, 'profiles', uid), {
-  //     name: userForm.name.value,
-  //     username: userForm.username.value,
-  //     bio: userForm.bio.value,
-  //     uid: result.uid,
-  //   })
-  //     .then(() => {
-  //       userForm.reset();
-  //     });
-  // });
 }
 
 export function isValidField(nameValue, usernameValue) {
